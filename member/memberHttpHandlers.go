@@ -39,7 +39,7 @@ func memberHandlerAdd(w http.ResponseWriter, r *http.Request) {
 	err = memberHandlerAddValidationForm(r.Form)
 	if err != nil {
 		log.Println(err.Error())
-		http.Error(w, "Internal Server Error: "+err.Error(), http.StatusBadRequest)
+		http.Error(w, "Error: "+err.Error(), http.StatusBadRequest)
 	} else {
 		name = strings.Join(r.Form["memberName"], "")
 		email = strings.Join(r.Form["memberEmail"], "")
