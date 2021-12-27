@@ -75,7 +75,7 @@ func memberHandlerAddValidationForm(formData map[string][]string) error {
 	nameRegex := regexp.MustCompile("^[a-zA-Z0-9 ]+$")
 	isValid := nameRegex.MatchString(strings.Join(formData["memberName"], ""))
 	if !isValid {
-		err = errors.New("Not validate Name")
+		err = errors.New("Name is not valid")
 	}
 	return err
 }
